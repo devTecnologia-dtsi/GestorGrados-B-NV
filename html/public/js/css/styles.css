@@ -1,0 +1,284 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-group input[type="file"] {
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.form-group button {
+    background-color: #fff;
+    color: #000;
+    border: #ffd300 solid;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.form-group button:hover {
+    background-color: #ffd300;
+    border: #ffd300 solid;
+    color: #fff;
+}
+
+.text-wrap {
+    white-space: pre-wrap;
+    /* This allows the text to wrap and respects whitespace */
+    word-wrap: break-word;
+    /* This ensures that the text will break within words if needed */
+    overflow-wrap: break-word;
+    /* This is a newer standard for breaking long words */
+}
+
+/* Validación de imágenes */
+.image-examples {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    /* Evita que los elementos se envuelvan */
+}
+
+.image-examples p {
+    margin-bottom: 10px;
+}
+
+.image-example {
+    display: inline-block;
+    margin: 10px;
+    width: 45%;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    /* Mantiene el ancho específico */
+}
+
+.image-example img {
+    max-height: 200px;
+    width: auto;
+    height: auto;
+    border: 2px solid #ccc;
+}
+
+.image-example.valid img {
+    border-color: green;
+}
+
+.image-example.valid p {
+    font-size: 10px;
+    color: green;
+    font-family: cursive;
+}
+
+.image-example.invalid img {
+    border-color: red;
+}
+
+.image-example.invalid p {
+    font-size: 10px;
+    color: red;
+    font-family: cursive;
+}
+
+.image-example p {
+    margin: 5px 0 0;
+}
+
+@media (max-width: 600px) {
+    .image-example {
+        width: 45%;
+        /* Ajuste menor pero aún así mantenido lado a lado */
+    }
+
+    .image-example img {
+        max-height: 120px;
+        /* Ajuste menor pero aún así mantenido lado a lado */
+    }
+}
+
+@media (max-width: 360px) {
+    .image-example {
+        width: 30%;
+        /* Ajuste menor pero aún así mantenido lado a lado */
+    }
+
+    .image-example img {
+        max-height: 80px;
+        /* Ajuste menor pero aún así mantenido lado a lado */
+    }
+}
+
+/* Fin de validación de imágenes */
+
+.error {
+    color: #d9534f;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.welcome-message {
+    margin-bottom: 24px;
+    color: #007bff;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+/* Progreso de la carga */
+#progressContainer {
+    display: none;
+}
+
+#responseContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+#responseContainer.success {
+    border-color: green;
+    color: green;
+}
+
+#responseContainer.error {
+    border-color: red;
+    color: red;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.645);
+    z-index: 1000;
+}
+
+#loadingGifContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    text-align: center;
+    /* Center-align the content inside the container */
+    z-index: 1001;
+}
+
+#loadingGif {
+    width: 70%;
+}
+
+@media (max-width: 1024px) {
+    #loadingGifContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        text-align: center;
+        /* Center-align the content inside the container */
+        z-index: 1001;
+    }
+
+    #loadingGif {
+        width: 50%;
+    }
+
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .form-group button {
+        padding: 10px;
+    }
+
+    .text-wrap {
+        font-size: 14px;
+        /* Adjust the font size for smaller screens */
+        line-height: 1.5;
+        /* Adjust line height if necessary */
+    }
+
+    #loadingGifContainer {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        text-align: center;
+        /* Center-align the content inside the container */
+        z-index: 1001;
+    }
+
+    #loadingGif {
+        width: 50%;
+    }
+}
