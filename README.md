@@ -1,3 +1,4 @@
+HEAD
 # API para gestión de grados
 
 Este proyecto es una API de gestión de requisitos de grado desarrollada en PHP. 
@@ -58,6 +59,11 @@ docker run --name api_gestor_grados -dp 8081:80 -d --env-file .env api_gestor_gr
 
 Clonar el repositorio:
 
+
 git clone http://10.0.36.206:8080/tfs/DefaultCollection/PHP/_git/gestorGrados_NV_Back
 cd api_gestor_grados
+Github: https://github.com/devTecnologia-dtsi/GestorGrados-B-NV.git
+
+# GestorGrados-B-NV
+Ajustado con cambios de ivan
 
